@@ -1,0 +1,75 @@
+[tool.ruff]
+line-length = 79
+target-version = "py310"
+show-fixes = true
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "D",   # docstring
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "C",   # mccabe
+    "W",   # pycodestyle warnings
+    "ANN", # 型アノテーション
+    "S",   # セキュリティ
+    "BLE", # 例外処理
+    "FBT", # ブール値の型
+    "A",   # 変数の命名規則
+    "COM", # コンマの配置
+    "T20", # print文の使用制限
+    "RUF", # Ruff固有のルール
+]
+ignore = ["D203", "D213"]  # docstringのスタイルの競合を解消
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = false
+line-ending = "lf"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = ["classmethod"]
+ignore-names = ["setUp", "tearDown", "setUpClass", "tearDownClass"]
+
+[tool.ruff.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = []
+known-third-party = ["websockets"]
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.10"
+explicit_package_bases = true
+warn_return_any = true
+no_implicit_optional = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+disallow_any_unimported = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+ignore_missing_imports = true
+follow_imports = "skip"
+exclude = ["^venv/*"]
