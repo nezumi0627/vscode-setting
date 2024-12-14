@@ -5,14 +5,16 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
       "source.organizeImports.ruff": "explicit"
-    }
+    },
+    "editor.inlayHints.enabled": "off"
   },
   "editor.rulers": [79],
+  "editor.inlayHints.enabled": "off",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.autoImportCompletions": true,
   "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.variableTypes": true,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true
+  "python.analysis.inlayHints.variableTypes": true
 }
